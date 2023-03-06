@@ -27,6 +27,7 @@ jobs:
         run: |
           echo '$ACCESS_TOKEN'
           echo '{"access_token": ${ACCESS_TOKEN}, "token_type": ${TOKEN_TYPE}, "refresh_token": ${REFRESH_TOKEN}, "expiry": ${EXPIRY}}' > token.json
+          cat token.json
       
       - name: Build
         run: go build
