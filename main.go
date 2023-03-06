@@ -107,9 +107,10 @@ func main() {
 		fmt.Println("Name, Major:")
 		for _, row := range resp.Values {
 			// Print columns A and E, which correspond to indices 0 and 4.
-			byteSlice := []byte(fmt.Sprint("{%v, %v, %v, %v, %v, %v}", row[0], row[1], row[2], row[3], row[4], row[5]))
+			str1 := fmt.Sprintf("{\n\"%s\":,\n \"%s\":,\n \"%s\":,\n \"%s\":,\n \"%s\":,\n \"%s\":\n}", row[0], row[1], row[2], row[3], row[4], row[5])
+			byteSlice := []byte(str1)
 			file.Write(byteSlice)
-			fmt.Printf("%s, %s, %s, %s, %s %s\n", row[0], row[1], row[2], row[3], row[4], row[5])
+			fmt.Printf(str1)
 		}
 	}
 
