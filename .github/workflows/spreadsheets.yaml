@@ -2,7 +2,7 @@ name: Scrape Spreadsheet
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   scrape:
