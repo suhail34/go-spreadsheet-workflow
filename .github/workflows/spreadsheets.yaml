@@ -20,7 +20,7 @@ jobs:
 
       - name: Set up Tokens
         run: |
-          echo '{"access_token":"'${{ secrets.ACCESS_TOKEN }}'", "token_type":"'${{ secrets.TOKEN_TYPE }}'", "refresh_token":"'${{ secrets.REFRESH_TOKEN }}'", "expiry":"'${{ secrets.EXPIRY }}'"}' > token.json
+          echo '{"access_token":${{ secrets.ACCESS_TOKEN }}, "token_type":${{ secrets.TOKEN_TYPE }}, "refresh_token":${{ secrets.REFRESH_TOKEN }}, "expiry":${{ secrets.EXPIRY }}}' > token.json
       
       - name: Build
         run: go build
