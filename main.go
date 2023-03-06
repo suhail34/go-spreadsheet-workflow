@@ -58,6 +58,7 @@ func tokenFromFile(file string) (*oauth2.Token, error) {
 	defer f.Close()
 	tok := &oauth2.Token{}
 	err = json.NewDecoder(f).Decode(tok)
+	fmt.Println(*tok)
 	return tok, err
 }
 
