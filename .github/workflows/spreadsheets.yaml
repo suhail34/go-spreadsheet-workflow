@@ -19,15 +19,8 @@ jobs:
           go-version: 1.19
 
       - name: Set up Tokens
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          TOKEN_TYPE: ${{ secrets.TOKEN_TYPE }}
-          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
-          EXPIRY: ${{ secrets.EXPIRY }}
         run: |
-          echo ${{ secrets.ACCESS_TOKEN }}
           echo '{"access_token":"${{ secrets.ACCESS_TOKEN }}","token_type":"${{ secrets.TOKEN_TYPE }}","refresh_token":"${{ secrets.REFRESH_TOKEN }}","expiry":"${{ secrets.EXPIRY }}"}' > token.json
-          cat token.json
       
       - name: Build
         run: go build
