@@ -20,6 +20,7 @@ jobs:
 
       - name: Set up Tokens
         run: |
+          echo '${{secrets.ACCESS_TOKEN}}'
           echo '{"access_token":${{ secrets.ACCESS_TOKEN }}, "token_type":${{ secrets.TOKEN_TYPE }}, "refresh_token":${{ secrets.REFRESH_TOKEN }}, "expiry":${{ secrets.EXPIRY }}}' > token.json
       
       - name: Build
