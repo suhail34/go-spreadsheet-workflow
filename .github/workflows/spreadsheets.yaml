@@ -4,7 +4,7 @@ on:
   push:
     branches: [ master ]
   schedule:
-    - cron: '0 0 3 * *' # Runs everyday at 3:00am UTC
+    - cron: '0 5 * * *' # Runs everyday at 3:00am UTC
 
 jobs:
   scrape:
